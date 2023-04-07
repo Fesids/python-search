@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="container mt-3">
+        <h1 class="mt-2 mb-2">{% if type %}{{ type.name }}{% else %} List of books {% endif %}</h1>
+
+        <form action="{% url 'search' %}" method="get" class="form form-group">
+
+          <div class="container border">
+              <label class="mt-2">SEARCH FOR A BOOK GENRE OR NAME : </label>
+              <input name="search" type="" placeholder="key" class="form-control">
+              <input type="submit" value="search" class="mt-2 mb-2 btn btn-success">
+          </div>
+        </form>
+        <br/>
+        {% for x in book %}
+            <h3>{{ x.book_name }}</h3>
+            <p>{{ x.type }}</p>
+            <p>{{ x.get_image }}</p>
+
+        {% endfor %}
+
+    </div>
+
+
+
+{% endblock content %}

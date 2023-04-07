@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        {% if user == book.author_post %}
+            <h2>{{ book.book_name }}</h2>
+            <p>
+                <img src="{{ book.image.url }}" width="250" height="320">
+            </p>
+            <p>price : {{ book.price }}</p>
+            <p>author : {{ book.author_post }}</p>
+            <p>type : {{ book.type }}</p>
+            <p>
+                <a href="{% url 'delete_book' book.pk %}" class="btn btn-danger" >delete</a>
+                <a href="{% url 'update_book' book.pk %}" class="btn btn-primary">update</a>
+            </p>
+        {% else %}
+            <div>
+                 <h2>{{ book.book_name }}</h2>
+                <p>
+                    <img src="{{ book.image.url }}" width="250" height="320">
+                </p>
+                <p>price : {{ book.price }}</p>
+                <p>author : {{ book.author_post }}</p>
+                <p>type : {{ book.type }}</p>
+
+        {% endif %}
+    </div>
+
+
+{% endblock %}

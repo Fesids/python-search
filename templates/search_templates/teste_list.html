@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    {% for book in object_list %}
+        <div class="container border mt-3 mb-3">
+          <a href="{{ book.get_url }}">
+            <h3>{{ book.book_name }}</h3>
+          </a>
+          <p>
+            <img src="{{ book.get_image }}" width="150" height="200">
+          </p>
+          <h5>author : {{ book.author_name }}</h5>
+          <h5>type : {{ book.type }}</h5>
+        </div>
+    {% endfor %}
+{% endblock %}
