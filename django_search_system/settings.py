@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'book.apps.BookConfig',
     'accounts.apps.AccountsConfig',
     'profiles.apps.ProfilesConfig',
+    'cart.apps.CartConfig',
 
 
     # 3rd party

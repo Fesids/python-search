@@ -8,27 +8,30 @@
             Found {{ total_results }} result{{ total_results|pluralize }}
           {% endwith %}
        </h2>
-      {% for c in results %}
-        <div class="container border mt-3 mb-3">
-          <a href="{% url 'book_detail' c.pk %}">
-            <h3>{{ c.book_name }}</h3>
-          </a>
-          <p>
-            <img src="{{ c.image.url }}" width="150" height="200">
-          </p>
-          <h5>author : {{ c.author_name }}</h5>
-          <h5>type : {{ c.type }}</h5>
+       <div class="list-book-all">
+         {% for c in results %}
+          <div class="container border mt-3 mb-3 book">
+            <a href="{% url 'book_detail' c.pk %}">
+              <h3>{{ c.book_name }}</h3>
+            </a>
+            <p>
+              <img src="{{ c.image.url }}" width="150" height="200">
+            </p>
+            <h5>author : {{ c.author_name }}</h5>
+            <h5>type : {{ c.type }}</h5>
+          </div>
+
+
+          {% empty %}
+            <h3>No results found.</h3>
+          {% endfor %}
+          {% endif %}
+
+
         </div>
-
-
-      {% empty %}
-        <h3>No results found.</h3>
-      {% endfor %}
-      {% endif %}
       <form action="{% url 'book_list' %}" class="form-inline" method="get">
-        <input type="submit" value="back" class="btn btn-primary">
+        <input type="submit" value="back" class="btn btn-success">
       </form>
-
-    </div>
+       </div>
 
 {% endblock %}

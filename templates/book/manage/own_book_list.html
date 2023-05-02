@@ -2,19 +2,23 @@
 
 {% block content %}
     <div>
+        <h2>Your own book list</h2>
         <a href="{% url 'create_book' %}">+ create a book</a>
-        {% for book in book_list %}
-            <div class="book container border">
+        <div class="own_book_list">
+             {% for book in book_list %}
+                <div class="book container border book">
 
-                <p>
-                    <img src="{{ book.image.url }}" width="150" height="200">
-                </p>
-                <h2 class="mt-2 mb-2"><a href="{% url 'book_detail' book.pk %}">{{ book.book_name }}</a></h2>
-                <p>{{ book.price }}</p>
-            </div>
-        {% empty %}
-            <p>You've no book to sell</p>
-        {% endfor %}
+                    <p>
+                        <img src="{{ book.image.url }}" width="150" height="200">
+                    </p>
+                    <h2 class="mt-2 mb-2"><a href="{% url 'book_detail' book.pk %}">{{ book.book_name }}</a></h2>
+                    <p>price {{ book.price }}</p>
+                </div>
+            {% empty %}
+                <p>You've no book to sell</p>
+            {% endfor %}
+        </div>
+
     </div>
 
 

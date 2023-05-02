@@ -23,7 +23,8 @@
                 <p>price : {{ book.price }}</p>
                 <p>author : {{ book.author_post }}</p>
                 <p>type : {{ book.type }}</p>
-
+                <a href="{% url 'add_product' book.pk %}">add to cart</a>
+            </div>
         {% endif %}
     </div>
 

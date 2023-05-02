@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div>
+        add to {{ product.book_name }} cart
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="add to cart" class="btn btn-success">
+        </form>
+    </div>
+
+{% endblock %}

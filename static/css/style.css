@@ -1,0 +1,27 @@
+.list-book-all{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+
+.own_book_list{
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+
+}
+.book{
+    flex: 1 0 33%;
+    display: inline-block;
+    flex-grow: 1;
+    justify-content: center;
+    box-sizing: border-box;
+
+
+}
+

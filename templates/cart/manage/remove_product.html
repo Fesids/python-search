@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <div>
+        <h2>Are you sure that you want to remove {{ product.book_name }}?</h2>
+        <form method="post">
+            {% csrf_token %}
+            <input class="btn btn-success" type="submit" value="remove">
+        </form>
+    </div>
+{% endblock %}
